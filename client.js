@@ -19,12 +19,48 @@ const connect = function() {
   conn.on('connect', () => {
     conn.write('Name: HAP');
   });
+  
+  // conn.on('connect', () => {
+  //   conn.write('Move: up');
+  // });
+  
+  conn.on('connect', () => {
+    setTimeout(() => {
+      conn.write('Move: up');
+    }, 5000);
+  });
+  
+  conn.on('connect', () => {
+    setTimeout(() => {
+      conn.write('Move: left');
+    }, 10000);
+  });
+
 
   return conn;
 }
 
 module.exports = connect;
 
+// const start = Date.now();
 
-// To accomplish this, inside the connect function, use the .on method on our conn object to register a "connect" handler (a callback function). 
-// In the callback, print a message for us (the player) to see - something like "Successfully connected to game server" will suffice.
+// //
+// // a doAction function which console logs the acts taken by the robot
+// // by scheduling messages to appear when the action is finished
+// //
+// const doAction = function(name,time,next){
+//   console.log((Date.now() - start) + ': Starting :' + name + ':: This will take ' + time + ' seconds.');
+//   setTimeout(()=>{
+//     if (next !== null){
+//       next();
+//     }
+//     console.log('End : ' + name + ':: This took ' + time + ' seconds');
+//   },time*1000);
+// }
+
+// //
+// // Look
+// //
+// const look = ()=>{
+//   doAction("look",1,null);
+// };
