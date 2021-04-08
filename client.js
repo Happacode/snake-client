@@ -20,11 +20,11 @@ const connect = function() {
     conn.write('Name: HAP');
   });
   
-  // conn.on('connect', () => {
-  //   conn.write('Move: up');
-  // });
+  conn.on('connect', () => {
+    conn.write('Say: Yum!');
+  });
   
-
+  
   return conn;
 }
 
