@@ -24,18 +24,6 @@ const connect = function() {
   //   conn.write('Move: up');
   // });
   
-  conn.on('connect', () => {
-    setTimeout(() => {
-      conn.write('Move: up');
-    }, 5000);
-  });
-  
-  conn.on('connect', () => {
-    setTimeout(() => {
-      conn.write('Move: left');
-    }, 10000);
-  });
-
 
   return conn;
 }
